@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/', index);
-app.use('/frequency', index);
 
 app.listen(port, (() => {
     console.log('Runnning on ' + port);
