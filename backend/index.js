@@ -7,15 +7,20 @@ const index = require('./routes/index');
 
 const port = process.env.PORT || 3001;
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/', index);
+app.use('/frequency', index);
 
-app.listen(port, function() {
+app.listen(port, (() => {
     console.log('Runnning on ' + port);
-});
+}));
 
 module.exports = app;
