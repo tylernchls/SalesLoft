@@ -41,10 +41,13 @@ const getEmailData = async () => {
 const getFrequencyCount = async () => {
   let actualCount = [];
   let temp = await getEmailData();
-  let testCount = temp.map((email) => {
-    actualCount.push(countLetterFrequency(email));
+  let testCount = temp.map((email, ) => {
+    actualCount.push({"Email":email, "Frequency":countLetterFrequency(email)});
   }); 
-  return actualCount;
+  const frequencyArray = Object.values(actualCount);
+  console.log('arrrr', frequencyArray);
+  
+  return frequencyArray;
 };
 
 const countLetterFrequency = (string) => {  

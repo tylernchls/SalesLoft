@@ -39,6 +39,28 @@
   font-weight: bold;
 }
 
+.column-container{
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.column.is-fourth{
+  flex: 0 0 15%;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px 
+}
+p {
+  padding: 0 0 5px;
+  margin: 0;
+}
+
+.frequency-data .header .column, .table-data .column{
+  border:1px solid black;
+  padding: 10px 1rem;
+  flex: 0 0 49%
+}
+
 .App-logo {
   height: 10vmin;
   pointer-events: none;
