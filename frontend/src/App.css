@@ -1,10 +1,50 @@
-.App {
-  text-align: center;
+.column-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.peopleData {
+  flex: 1 0 25%;
+  margin: 10px;
+  font: 14px;
+  border: 1px solid red;
+  padding: 1rem;
+}
+
+.peopleData p {
+  margin: 0;
+  padding: 0 0 5px;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.nav-item {
+  border: 1px solid white;
+  border-radius: 15px;
+  margin: 0 15px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
+  position: absolute;
+  left: -15px;
+  top: 4px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,17 +55,20 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem;
 }
 
 .App-link {
   color: #61dafb;
+  position: absolute;
+  left: 100px;
+  top: 33px;
 }
 
 @keyframes App-logo-spin {

@@ -22,7 +22,8 @@ const getPeopleData = async () => {
       let title = person.title;
       peopleData.push({ name, email, title });
     });
-    return peopleData;
+    const peopleArray = Object.values(peopleData);
+    return peopleArray;
   } catch (e) { console.error(e) };
 };
 
@@ -55,8 +56,8 @@ const countLetterFrequency = (string) => {
 }
 
 router.route('/')
-  .get((req, res) => {
-    getPeopleData().then((data) => {
+  .get((req, res) => {  
+    getPeopleData().then((data) => { 
       res.send(data);
     });
   });
