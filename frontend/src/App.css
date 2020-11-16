@@ -39,26 +39,35 @@
   font-weight: bold;
 }
 
+.frequency-data{
+  width: 100%;
+}
+/*  */
 .column-container{
   display: flex;
-  flex-flow: row no-wrap;
+  flex-flow: row wrap;
+  /* border: 1px solid red; */
+}
+
+.column{
+  flex: 1 1 0;
+  padding: 1rem;
 }
 
 .column.is-fourth{
-  flex: 0 0 15%;
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px 
+  flex: 0 0 25%;
 }
+
 p {
   padding: 0 0 5px;
   margin: 0;
+  font-weight: bold;
 }
 
 .frequency-data .header .column, .table-data .column{
   border:1px solid black;
   padding: 10px 1rem;
-  flex: 0 0 49%
+  font-size: 12px;
 }
 
 .App-logo {

@@ -65,16 +65,14 @@ function App() {
             return ( 
             <div className="peopleData" key={index}> 
               <p><span className="bold">Name:</span> {person.name}</p>
-              <p><span className="bold">Email:</span> <a href="" target="_blank">{person.email}</a></p>
+              <p><span className="bold">Email:</span>{person.email}</p>
               <p><span className="bold">Title:</span> {person.title}</p>
             </div>
             )
           })}
       </div>
       <div className="column-container frequency-data">
-        {frequencyResponseData.map((keyName, keyIndex) => {      
-          console.log('keyname', keyName.Frequency);
-          
+        {frequencyResponseData.map((keyName, keyIndex) => {            
           return (
             <div className="column is-fourth" key={keyIndex}>
               <p>Email: {keyName.Email}</p>
@@ -82,14 +80,14 @@ function App() {
                 <div className="column">Character</div>
                 <div className="column">Count</div>
               </div>
-              <div className="column-container table-data">
-              {Object.keys(keyName.Frequency).map((key) => {
-                return (<div>{key}: {keyName.Frequency[key]}</div>)      
-              })}
-
-                <div className="column">a:</div>
-                <div className="column">2</div>
-              </div>
+                {Object.keys(keyName.Frequency).map((key) => {
+                  return (
+                    <div className="column-container table-data">
+                      <div className="column">{key}:</div>
+                      <div className="column">{keyName.Frequency[key]}</div>
+                    </div>
+                  )      
+                })}
             </div>
           )
         })}
