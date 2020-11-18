@@ -1,0 +1,33 @@
+import React, { useState, useEffect }  from 'react'
+import Axios from "axios";
+
+
+function GetPeopleData () {  
+    const [responseData, setResponseData] = useState([]); 
+
+    useEffect(() => {
+        Axios({
+            method: "GET",
+            url: "http://localhost:3001/",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).then(response => {
+            setResponseData(response.data)     
+            }).catch((err) => { console.log(err) }); 
+    }, []);
+
+    return (
+        <div className="column-container">
+          {responseData.map((person, index) => {
+            return ( 
+            <div className="peopleData" key={index}> 
+              <p><span className="bold">Name:</span> {person.name}</p>
+              <p><span className="bold">Email:</span>{person.email}</p>
+              <p><span className="bold">Title:</span>{person.title}</p>
+            </div>
+            )
+          })}
+        </div>
+    )
+  }

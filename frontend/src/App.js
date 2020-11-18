@@ -2,31 +2,30 @@ import logo from './logo.svg';
 import Axios from "axios";
 import React from 'react'
 import './App.css';
+import peopleComponent from './components/peopleComponent';
 
 function App() {
 
-  const [responseData, setResponseData] = React.useState([])
   const [frequencyResponseData, setFrequencyResponseData] = React.useState([])
   const [DuplicateEmailResponseData, setDuplicateEmailResponseData] = React.useState([])
 
   /// TODO: bring consts into according function
   /// TODO: turn all functions into Components and just render the components
-  /// TODO: Send api request using hooks and rid of axios
   /// TODO: Clear data and render new data when another nav item is clicked
   /// TODO: Code Cleanup
   /// TODo: README & Developer notes
 
-  function getPeopleData () {  
-    Axios({
-      method: "GET",
-      url: "http://localhost:3001/",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(response => {
-      setResponseData(response.data)     
-    }).catch((err) => { console.log(err) });
-  }
+  // function getPeopleData () {  
+  //   Axios({
+  //     method: "GET",
+  //     url: "http://localhost:3001/",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   }).then(response => {
+  //     setResponseData(response.data)     
+  //   }).catch((err) => { console.log(err) });
+  // }
 
   function getFrequencyCount () {
     Axios({
@@ -100,7 +99,7 @@ function App() {
             <div className="peopleData" key={index}> 
               <p><span className="bold">Name:</span> {person.name}</p>
               <p><span className="bold">Email:</span>{person.email}</p>
-              <p><span className="bold">Title:</span> {person.title}</p>
+              <p><span className="bold">Title:</span>{person.title}</p>
             </div>
             )
           })}
