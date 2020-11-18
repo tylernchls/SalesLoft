@@ -54,13 +54,13 @@ const App = () => {
           Tyler Nichols
         </a>
         <div className="nav">
-          <div className="nav-item" onClick={() => navToPage('people')}>List All People
+          <div className="nav-item" onClick={() => navToPage('people')}>List People
             {renderPage(pageState)}
           </div>
           <div className="nav-item" onClick={() => navToPage('frequency')}>View Frequency
             {renderPage(pageState)}
           </div>
-          <div className="nav-item" onClick={() => navToPage('duplicates')}>View Possible Duplicates
+          <div className="nav-item" onClick={() => navToPage('duplicates')}>View Duplicates
             {renderPage(pageState)}
           </div>
         </div>

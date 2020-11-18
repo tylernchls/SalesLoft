@@ -18,8 +18,8 @@ const config = {
 const getPeopleData = async () => {
   try {
     let peopleData = [];
-    const res = await axios.get(BASE_URL, config);
-    const people = res.data.data.map(person => {
+    const req = await axios.get(BASE_URL, config);
+    const people = req.data.data.map(person => {
       let name = person.display_name;
       let email = person.email_address;
       let title = person.title;
@@ -43,8 +43,8 @@ const getEmailData = async () => {
 
 const getFrequencyCount = async () => {
   let actualCount = [];
-  let temp = await getEmailData();
-  let testCount = temp.map((email, ) => {
+  let emailData = await getEmailData();
+  let count = emailData.map((email, ) => {
     actualCount.push({"Email":email, "Frequency":countLetterFrequency(email)});   
   });
   const frequencyArray = Object.values(actualCount); 
@@ -60,12 +60,17 @@ const countLetterFrequency = (string) => {
 }
 
 const getDuplicates = (string) => {
-  const testEmailDataArray = Object.values(testEmailData.emailData);
-  let possibleMatches = stringSimilarity.findBestMatch(string, testEmailDataArray);
+  const EmailDataArray = Object.values(testEmailData.emailData);
+  let possibleMatches = stringSimilarity.findBestMatch(string, EmailDataArray);
   return possibleMatches.bestMatch;  
 }
 
 router.route('/')
+  .get((req, res) => {
+    res.send('Welcome to my Express Server');
+  });
+
+router.route('/people')
   .get((req, res) => {  
     getPeopleData().then((data) => { 
       res.send(data);
