@@ -1,16 +1,18 @@
 import React, { useState, useEffect }  from 'react';
+import GetPossibleDuplicateEmails from './DuplicateEmailComponent';
 
 const EmailInput = () => {    
     const [email, setEmail] = useState(" ");
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      alert(`Submitting Email ${email}`);
+      GetPossibleDuplicateEmails(email)
+    };  
 
-    useEffect(() => {
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            alert(`Submitting Email ${email}`);
-            getPossibleDuplicateEmails(email)
-        };
+    // useEffect(() => {
 
-    }, []);
+    // }, []);
     return (
       <form onSubmit={handleSubmit}>
         <label>
