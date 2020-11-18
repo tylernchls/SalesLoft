@@ -11,7 +11,7 @@ const BASE_URL = 'https://api.salesloft.com/v2/people.json';
 const config = {
   headers: { 'Authorization': 'Bearer ' + process.env.API_KEY},
   params: {
-    per_page: 100,
+    per_page: 50,
   }
 };
 
@@ -47,8 +47,7 @@ const getFrequencyCount = async () => {
   let testCount = temp.map((email, ) => {
     actualCount.push({"Email":email, "Frequency":countLetterFrequency(email)});   
   });
-  const frequencyArray = Object.keys(actualCount).sort((a,b) => { a[1] - b[1]}); 
-  
+  const frequencyArray = Object.values(actualCount); 
   return frequencyArray;
 };
 
@@ -70,26 +69,27 @@ router.route('/')
   .get((req, res) => {  
     getPeopleData().then((data) => { 
       res.send(data);
-    });
+    }).catch((err) => { console.log(err) });
   });
 
 router.route('/emails')
   .get((req, res) => {
     getEmailData().then((data) => {
       res.send(data);   
-    });  
+    }).catch((err) => { console.log(err) });  
   });
 
 router.route('/frequency')
   .get((req, res) => {
     getFrequencyCount().then((response) => {
       res.send(response);  
-    });
+    }).catch((err) => { console.log(err) });
   });
 
 router.route('/duplicates')
   .post((req, res) => {   
-    res.send(getDuplicates(req.body.email));
-  });
+    let payload = Object.keys(req.body).toString()
+    res.send(getDuplicates(payload));
+  })
 
 module.exports = router; 
