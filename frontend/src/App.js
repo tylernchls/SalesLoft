@@ -17,26 +17,22 @@ const App = () => {
     switch (pgs) {
       case "people":
         return <PeopleComponent />
-        break;
         
       case "frequency":
         return <FrequencyComponent />
-        break;
 
       case "duplicates":
         return <EmailInputComponent />
-        break;
       
       default:
       return null
-        break;
     }
-  }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-      <a href="http://localhost:3000/"><img src={logo} className="App-logo" alt="logo"/></a>
+        <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
           href="https://github.com/tylernchls/SalesLoft"

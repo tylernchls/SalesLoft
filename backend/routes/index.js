@@ -12,6 +12,7 @@ const config = {
   headers: { 'Authorization': 'Bearer ' + process.env.API_KEY},
   params: {
     per_page: 100,
+    page: 2
   }
 };
 

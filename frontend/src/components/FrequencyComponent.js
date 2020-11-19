@@ -29,7 +29,7 @@ const GetFrequencyCount = () => {
                     </div>
                         {Object.keys(keyName.Frequency).map((key) => {
                         return (
-                            <div className="column-container table-data">
+                            <div className="column-container table-data" key={key}>
                             <div className="column">{key}:</div>
                             <div className="column">{keyName.Frequency[key]}</div>
                             </div>

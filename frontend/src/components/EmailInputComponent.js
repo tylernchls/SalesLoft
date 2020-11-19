@@ -3,7 +3,7 @@ import Axios from "axios";
 import DuplicateEmailComponent from './DuplicateEmailComponent';
 
 const EmailInput = () => {    
-    const [email, setEmail] = useState(" ");
+    const [email, setEmail] = useState("");
     const [duplicateEmailResponseData, setDuplicateEmailResponseData] = useState({});
 
     const getPossibleDuplicateEmail = (email) => {
@@ -20,23 +20,25 @@ const EmailInput = () => {
     };
 
     const handleSubmit = (e) => {
-      e.preventDefault();
-      alert(`Submitting Email ${email}`);    
+      e.preventDefault();   
       getPossibleDuplicateEmail(email)
     };  
     return (
-      <div>
+      <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
-          <label>
+            <h3>Enter email address to check for possible duplicate</h3>
+
+            {Object.keys(duplicateEmailResponseData).length > 0 && <DuplicateEmailComponent data={duplicateEmailResponseData} />} 
+
             <input
               type="text"
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
-          </label>
-          <input text="Enter email address" type="submit" value="Submit" />
-      </form>
-      {Object.keys(duplicateEmailResponseData).length > 0 && <DuplicateEmailComponent data={duplicateEmailResponseData} />} 
+            <div>
+              <button className="submit" disabled={!email} >Submit</button>
+            </div>
+        </form>
       </div>
     );
 }
