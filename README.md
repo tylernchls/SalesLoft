@@ -27,3 +27,11 @@
 - Level 2. Click the 'View Frequency' nav button to display letter frequency of the emails from level 1.
 - Level 3. Click the 'View Duplicates' nav button. This will display an input where you will enter a email address (ex.sakatius@gmail.com) and will return a possible duplicate email address and rating (0-1) from the data retreived in level 1.
 - Level 4. Didn't complete but has got my mind thinking about refactoring to handle trillions of records without introducing latency.
+
+#### Routes
+- `GET /` Initial server response
+- `GET /people` Returns people data
+- `GET /frequency` Returns frequency data
+- `POST /duplicates` Returns duplicate data
+
+
