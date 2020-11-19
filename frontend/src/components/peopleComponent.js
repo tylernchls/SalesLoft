@@ -1,7 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import DuplicateEmailComponent from './DuplicateEmailComponent';
 import Axios from "axios";
-
 
  const GetPeopleData = () => {  
     const [responseData, setResponseData] = useState([]); 

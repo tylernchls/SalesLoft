@@ -22,7 +22,8 @@ const EmailInput = () => {
     const handleSubmit = (e) => {
       e.preventDefault();   
       getPossibleDuplicateEmail(email)
-    };  
+    }; 
+     
     return (
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>

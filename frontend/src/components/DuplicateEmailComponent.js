@@ -2,8 +2,8 @@ const DuplicateEmailComponent = ({data}) => {
     return (
         <div className="column-container">     
             <div>    
-                <p>Email: {data.target}</p>
-                <p>Result: {data.rating * 100} %</p>
+                <p>Possible Duplicate: {data.target}</p>
+                <p>Rating: {data.rating * 100} %</p>
             </div>      
         </div>
     )

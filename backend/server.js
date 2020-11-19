@@ -7,10 +7,6 @@ const index = require('./routes/index');
 
 const port = process.env.PORT || 3001;
 
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
-
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

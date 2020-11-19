@@ -1,6 +1,6 @@
+import './App.css';
 import logo from './logo.svg';
 import React, { useState, useEffect }  from 'react';
-import './App.css';
 import PeopleComponent from './components/PeopleComponent';
 import FrequencyComponent from './components/FrequencyComponent';
 import EmailInputComponent from './components/EmailInputComponent';

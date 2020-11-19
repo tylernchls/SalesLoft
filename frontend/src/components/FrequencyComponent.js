@@ -1,6 +1,5 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect }  from 'react';
 import Axios from "axios";
-
 
 const GetFrequencyCount = () => {
     const [frequencyResponseData, setFrequencyResponseData] = useState([]);

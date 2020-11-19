@@ -1,4 +1,4 @@
-// Data from page 1 of SalesLoft API
+// Data from page 1 @ of SalesLoft API
 module.exports.emailData = [
     "sakatius@gmail.com",
     "sakatiuss@gmail.com",
