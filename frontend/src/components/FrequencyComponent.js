@@ -22,7 +22,7 @@ const GetFrequencyCount = () => {
             {frequencyResponseData.map((keyName, keyIndex) => {            
                 return (
                     <div className="column is-fourth" key={keyIndex}>
-                    <p>Email: {keyName.Email}</p>
+                    <p className="title">Email: {keyName.Email}</p>
                     <div className="column-container header">
                         <div className="column">Character</div>
                         <div className="column">Count</div>

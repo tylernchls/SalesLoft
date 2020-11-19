@@ -11,7 +11,7 @@ const BASE_URL = 'https://api.salesloft.com/v2/people.json';
 const config = {
   headers: { 'Authorization': 'Bearer ' + process.env.API_KEY},
   params: {
-    per_page: 50,
+    per_page: 100,
   }
 };
 
@@ -43,7 +43,7 @@ const getEmailData = async () => {
 
 const getFrequencyCount = async () => {
   let actualCount = [];
-  let emailData = await getEmailData();
+  const emailData = await getEmailData();
   let count = emailData.map((email, ) => {
     actualCount.push({"Email":email, "Frequency":countLetterFrequency(email)});   
   });
@@ -57,13 +57,13 @@ const countLetterFrequency = (string) => {
      count[letter] ? count[letter]++ : count[letter] = 1;
   }));
   return count;
-}
+};
 
 const getDuplicates = (string) => {
   const EmailDataArray = Object.values(testEmailData.emailData);
   let possibleMatches = stringSimilarity.findBestMatch(string, EmailDataArray);
   return possibleMatches.bestMatch;  
-}
+};
 
 router.route('/')
   .get((req, res) => {

@@ -7,7 +7,7 @@
   flex: 1 0 25%;
   margin: 10px;
   font: 14px;
-  border: 1px solid red;
+  border: 1px solid aqua;
   padding: 1rem;
 }
 
@@ -46,7 +46,8 @@
 .column-container{
   display: flex;
   flex-flow: row wrap;
-  /* border: 1px solid red; */
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .column{
@@ -54,8 +55,12 @@
   padding: 1rem;
 }
 
-.column.is-fourth{
-  flex: 0 0 25%;
+.column-container .is-fourth{
+  flex: 0 0 20%;
+  border-left: 3px solid #59A27A;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0px 5px 6px 2px #ccc;
 }
 
 p {
@@ -65,10 +70,28 @@ p {
 }
 
 .frequency-data .header .column, .table-data .column{
-  border:1px solid black;
-  padding: 10px 1rem;
+  padding: 10px;
   font-size: 12px;
 }
+
+.table-data:nth-child(odd) .column{
+  background-color: #c0d1ce;
+}
+
+.title{
+  font-size: 1.2rem;
+  padding-bottom: 2px;
+}
+
+.sub-title{
+  font-size: 14px;
+  color: #a2cad3;
+}
+
+.email{
+  font-size: 14px;
+}
+
 
 .App-logo {
   height: 10vmin;

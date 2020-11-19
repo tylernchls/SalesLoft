@@ -9,11 +9,13 @@ import Axios from "axios";
     useEffect(() => {
         Axios({
             method: "GET",
-            url: "http://localhost:3001/",
+            url: "http://localhost:3001/people",
             headers: {
                 "Content-Type": "application/json"
             }
             }).then(response => {
+              console.log(response);
+              
             setResponseData(response.data)     
             }).catch((err) => { console.log(err) }); 
     }, []);
