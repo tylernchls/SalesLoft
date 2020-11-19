@@ -1,29 +1,43 @@
-import React, { useState, useEffect }  from 'react';
-import GetPossibleDuplicateEmails from './DuplicateEmailComponent';
+import React, { useState }  from 'react';
+import Axios from "axios";
+import DuplicateEmailComponent from './DuplicateEmailComponent';
 
 const EmailInput = () => {    
     const [email, setEmail] = useState(" ");
-    
+    const [duplicateEmailResponseData, setDuplicateEmailResponseData] = useState({});
+
+    const getPossibleDuplicateEmail = (email) => {
+        Axios({
+            method: "POST",
+            url: "http://localhost:3001/duplicates",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data: email
+            }).then(response => {
+                setDuplicateEmailResponseData(response.data);    
+            }).catch((err) => { console.log(err) }); 
+    };
+
     const handleSubmit = (e) => {
       e.preventDefault();
-      alert(`Submitting Email ${email}`);
-      GetPossibleDuplicateEmails(email)
+      alert(`Submitting Email ${email}`);    
+      getPossibleDuplicateEmail(email)
     };  
-
-    // useEffect(() => {
-
-    // }, []);
     return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </label>
-        <input type="submit" value="Submit" />
+      <div>
+        <form className="form" onSubmit={handleSubmit}>
+          <label>
+            <input
+              type="text"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </label>
+          <input text="Enter email address" type="submit" value="Submit" />
       </form>
+      {Object.keys(duplicateEmailResponseData).length > 0 && <DuplicateEmailComponent data={duplicateEmailResponseData} />} 
+      </div>
     );
 }
 

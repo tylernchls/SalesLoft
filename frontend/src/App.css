@@ -92,6 +92,10 @@ p {
   font-size: 14px;
 }
 
+.form {
+  text-align: center;
+}
+
 
 .App-logo {
   height: 10vmin;

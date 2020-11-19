@@ -14,8 +14,6 @@ import Axios from "axios";
                 "Content-Type": "application/json"
             }
             }).then(response => {
-              console.log(response);
-              
             setResponseData(response.data)     
             }).catch((err) => { console.log(err) }); 
     }, []);

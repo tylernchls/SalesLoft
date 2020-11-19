@@ -3,14 +3,12 @@ import React, { useState, useEffect }  from 'react';
 import './App.css';
 import PeopleComponent from './components/PeopleComponent';
 import FrequencyComponent from './components/FrequencyComponent';
-import DuplicateEmailComponent from './components/DuplicateEmailComponent';
 import EmailInputComponent from './components/EmailInputComponent';
 
 const App = () => {
   const [ pageState, setPageState ] = useState('');
   useEffect(() => {
-    console.log('useEffect', pageState);
-      
+    
   }, [pageState]);
 
   const navToPage = (arg) => { setPageState(arg) };
@@ -28,7 +26,7 @@ const App = () => {
       case "duplicates":
         return <EmailInputComponent />
         break;
-    
+      
       default:
       return null
         break;
@@ -38,7 +36,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+      <a href="http://localhost:3000/"><img src={logo} className="App-logo" alt="logo"/></a>
         <a
           className="App-link"
           href="https://github.com/tylernchls/SalesLoft"
@@ -57,10 +55,6 @@ const App = () => {
       <div className="responses">
         {renderPage(pageState)}
       </div>
-
-      {/* <div className="column-container">
-          <div className="column"></div>
-      </div> */}
     </div>
   );
 }

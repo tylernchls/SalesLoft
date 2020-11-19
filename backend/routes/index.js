@@ -93,6 +93,8 @@ router.route('/frequency')
 
 router.route('/duplicates')
   .post((req, res) => {   
+    console.log(req.body);
+    
     let payload = Object.keys(req.body).toString()
     res.send(getDuplicates(payload));
   })
