@@ -25,9 +25,9 @@ import Axios from "axios";
           {responseData.map((person, index) => {
             return ( 
               <div className="peopleData" key={index}> 
-                <p><span className="bold">Name:</span> {person.name}</p>
-                <p><span className="bold">Email:</span>{person.email}</p>
-                <p><span className="bold">Title:</span>{person.title}</p>
+                <p><span className="bold">Name: </span> {person.name}</p>
+                <p><span className="bold">Email: </span>{person.email}</p>
+                <p><span className="bold">Title: </span>{person.title}</p>
               </div>
             )
           })}
