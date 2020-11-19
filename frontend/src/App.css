@@ -105,7 +105,7 @@ input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid red;
+  border: 2px solid #52ed10;
   border-radius: 4px;
 }
 
@@ -121,7 +121,7 @@ input[type=text] {
 }
 
 .submit:disabled{
-  background: grey;
+  background: #c0c6be;
   color: black;
   cursor: no-drop;
 }
